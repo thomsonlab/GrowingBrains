@@ -1,4 +1,4 @@
-# GrowingBrains
+# Neural Networks grown and self-organized by Noise
 
 This work has been accepted to NeurIPS 2019 and is available on ArXiv (https://arxiv.org/abs/1906.01039). The link will point to the updated manuscript on NeurIPS proceedings once the paper has been published. 
 
