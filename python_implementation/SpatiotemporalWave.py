@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 # then used this script: https://github.com/BIDS/colormap/blob/master/parula.py
 # actual colormap is parula_map
 
-from parula import parula_map
+from parula_script import parula_map
 
 
 def matlab_percentile(x, p):
@@ -190,6 +190,9 @@ plt.title('Raster plot')
 #colorbar
 #title('probability of neuron firing - hotspots of wave')
 
+
+
+#
 plt.figure(3)
 plt.scatter(retinaParams['x'][:, 1], retinaParams['x'][:, 0],
             c=heatMap_wave,
