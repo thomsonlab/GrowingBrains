@@ -1,6 +1,7 @@
 ## spatiotemporal wave generator in layer - I (square shaped layer)
 
-
+# cdist in python is pdist2 in matlab, pdist in python is pdist in matlab
+#
 # remember * in matlab is matrix multiplication if its two matrices. in numpy have
 # to use @ for matrix mult and * for element wise
 
@@ -82,10 +83,10 @@ for t in range(1, totTime + 1): # simulation of totTime (ms)
 
     retinaParams['array_act'] = np.array([]) # active nodes reset to none
     retinaParams['I'] = np.array(3 * np.random.randn(totNeurons_Retina, 1)) # Noisy input, 1500x1 random numbers scaled by 3
-    f = np.argwhere(retinaParams['v'] >= 30)
+    f = np.argwhere(retinaParams['v'] >= 30) # argwhere gives an arrray with the [row, column] values of
     g = []
     for i in range(len(f)):
-        g.append(f[i][0])
+        g.append(f[i][0]) # since retinaParams['v'] is 1500x1, this is a list of row indices of the ones that
 
     retinaParams['fired'] = np.array(g, dtype = np.int)
     retinaParams['fired'].shape = (len(g),1)
