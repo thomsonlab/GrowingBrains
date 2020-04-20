@@ -213,6 +213,8 @@ numRfcompInit = 0
 #### instead could make each thing 1 x 400 instead and represent the s2 matrix as an attribute of the LGN neurons instead, so for
 #### each LGN neuron, can know how many layer I neurons its connected to
 
+## everything after this point assumes matrices
+
 while True:
     t += 1
     if t > 1e6:
