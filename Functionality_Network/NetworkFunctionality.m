@@ -1,20 +1,20 @@
 
 train_testAcc = [];
 
-for numSim = 1:11
+for numSim = 1:1
 
 clearvars -except numSim train_testAcc ; clc;
 %% This is the demo for MNIST dataset.
 rand('state',0)
 
-cd train_testMNIST\
+cd train_testMNIST/
 matFileTrain = sprintf('MNIST_train_%d.mat',numSim);
 matFileTest = sprintf('MNIST_test_%d.mat',numSim);
 load(matFileTrain)
 load(matFileTest)
 
 cd ..
-cd basisVec\
+cd basisVec/
 basisVec = sprintf('basisVec_MNIST_%d.mat',numSim);
 load(basisVec);
 

@@ -59,7 +59,7 @@ clusterDisp_wave = [];
 radius_wave = [];
 
 for t = 1:totTime % simulation of totTime (ms)
-    
+    fprintf("hi")
     spikeMat = zeros(totNeurons_Retina,1);
     
     for i = 1:numRetina

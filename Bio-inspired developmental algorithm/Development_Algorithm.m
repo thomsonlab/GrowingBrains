@@ -22,7 +22,7 @@ retinaParams_old = {};
 
 for i = 1:numRetina
     
-    retinaParams_old(i).numNeurons = totNeurons_Retina;
+    retinaParams_old(i).numNeurons = totNeurons_Retina; % number of neurons is 3200
     re = rand(totNeurons_Retina,1);
     
     retinaParams_old(i).x = squareLength*rand(totNeurons_Retina,2);
@@ -58,7 +58,7 @@ pause(0.2)
 
 LGN_num = [400];
 
-for outerRadius = 6%:2:24
+for outerRadius = 6%:2:24 
 
 for numLGN= LGN_num
     
@@ -125,8 +125,8 @@ while(1)
     
    
     if mod(t,1000) == 0
-    
-        s2Matrix= synapticMatrix_retinaLGN;
+     
+        s2Matrix= synapticMatrix_retinaLGN; 
         s2Matrix(s2Matrix<0.1) = NaN;
         s2Matrix = ~isnan(s2Matrix);
         
@@ -171,7 +171,7 @@ while(1)
             end 
             %saveas(gca,strcat('LGN_rf_arbitGeo/',sprintf('2DLGN_%d_%d_r=%d.fig',numLGN, totNeurons_Retina, outerRadius)));
             
-            for j = temp1%1:numLGN
+            for j = temp1 %1:numLGN
                 rgc_connected = [rgc_connected, find(~isnan(s2Matrix(:,j)))'];
             end
             percent_node = length(unique(rgc_connected))/totNeurons_Retina;

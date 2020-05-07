@@ -5,7 +5,7 @@ tic
 
 train_x = zscore(train_x')';
 H1 = [train_x .1 * ones(size(train_x,1),1)];
-clear train_x;
+%clear train_x;
 %% First layer RELM
 A1 = H1 * b1;A1 = mapminmax(A1);
 beta1 = b1;
@@ -26,6 +26,13 @@ fprintf(1,'Layer 3: Max Val of Output %f Min Val %f\n',l1,min(T1(:)));
 T1 = tansig(T1 * l1);
 
 beta = (T1'  *  T1+eye(size(T1',1)) * (C)) \ ( T1'  *  train_y);
+
+beta3 = (T1' * T1    +  eye(size(T1',1)) * (C)) \ ( T1'  *  train_y);
+part1 = T1' * T1    +  eye(size(T1',1)) * C
+part2 = ( T1'  *  train_y)
+part3 = part1 \ part2
+part4 = inv(part1) * part2
+
 Training_time = toc;
 disp('Training has been finished!');
 disp(['The Total Training Time is : ', num2str(Training_time), ' seconds' ]);
